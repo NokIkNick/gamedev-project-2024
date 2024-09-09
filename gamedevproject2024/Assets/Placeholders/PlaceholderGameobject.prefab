@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1187493883497307978
+--- !u!1 &2379224047124860790
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6044770822043627589}
-  - component: {fileID: 8802687112111806794}
+  - component: {fileID: 6782866524789051247}
+  - component: {fileID: 4133676393124886444}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: PlaceholderGameobject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6044770822043627589
+--- !u!4 &6782866524789051247
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187493883497307978}
+  m_GameObject: {fileID: 2379224047124860790}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7992504, y: 3.1264315, z: -0.15277737}
+  m_LocalPosition: {x: 1.0624542, y: 8.776173, z: -0.2524871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8802687112111806794
+--- !u!114 &4133676393124886444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187493883497307978}
+  m_GameObject: {fileID: 2379224047124860790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbaf17e626d376d46a6f491bd6764324, type: 3}
+  m_Script: {fileID: 11500000, guid: 142e366bccfdc434f811637f9d9315e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawnPoint: {fileID: 3341704502253172012, guid: bd5d16181406e524c813800a53665987, type: 3}
-  enemyPrefab: {fileID: 2379224047124860790, guid: 61cfa4646172b3841a0782b89dd7ba05, type: 3}
-  killCount: 0
-  initialSpawnTimer: 10
-  currentDifficulty: 0
-  spawnTimer: 0
