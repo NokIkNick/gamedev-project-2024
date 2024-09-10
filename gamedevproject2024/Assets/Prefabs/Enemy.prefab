@@ -120,6 +120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   speed: 0
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &-2549168402426050777
 Rigidbody2D:
   serializedVersion: 5
