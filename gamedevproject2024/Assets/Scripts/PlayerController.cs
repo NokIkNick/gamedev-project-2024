@@ -51,8 +51,10 @@ public class PlayerController : MonoBehaviour
                 _rigidbody2D.linearVelocity = new Vector2(move * moveSpeed, _rigidbody2D.linearVelocity.y);
 
             // Handle Jump
-            if (Input.GetKeyDown(jumpKey) /*&& isGrounded*/)
+            if (Input.GetKeyDown(jumpKey) /* && isGrounded*/)
             {
+                _animator.SetTrigger("Jump");
+                _animator.SetBool("Running", false);
                 _rigidbody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 _animator.SetTrigger("Jump");
             }

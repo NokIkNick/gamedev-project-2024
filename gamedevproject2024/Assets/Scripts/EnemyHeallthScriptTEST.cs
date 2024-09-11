@@ -21,12 +21,16 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-     private void OnTriggerEnter2D(Collider2D collison){
+     private void OnTriggerEnter2D(Collider2D collision){
         Debug.Log("Hit Something");
-        //int damageAmount = collison.GetComponent<PlayerAttack>().GetAttackDamage();
-        int damageAmount = collison.transform.parent.GetComponent<PlayerAttack>().GetAttackDamage();
+        if (collision.CompareTag("PlayerAttackHitbox"))
+        {
+         //int damageAmount = collison.GetComponent<PlayerAttack>().GetAttackDamage();
+        int damageAmount = collision.transform.parent.GetComponent<PlayerAttack>().GetAttackDamage();
         Debug.Log("Damage Amount: " + damageAmount);
         TakeDamage(damageAmount);
+        }
+
     }
 }
 
