@@ -3,5 +3,5 @@ using UnityEngine;
 
 public interface IEnemy
 {
-    event Action<IEnemy> onDeath;
+    event Action<GameObject> onDeath;
 }

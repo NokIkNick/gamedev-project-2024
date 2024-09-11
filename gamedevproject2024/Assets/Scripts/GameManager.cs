@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float initialSpawnTimer = 10f;
     private GameObject player;
     private event Action endGame;
-    [SerializeField] private difficulty currentDifficulty;
+    [SerializeField] private Difficulty currentDifficulty;
     [SerializeField] private float spawnTimer;
     
-    private enum difficulty{
+    private enum Difficulty{
         EASY,
         MEDIUM,
         HARD
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player.transform.position = playerSpawnPoint.position;
-        currentDifficulty = difficulty.EASY;
+        currentDifficulty = Difficulty.EASY;
         spawnTimer = initialSpawnTimer;
     }
 
@@ -38,16 +38,15 @@ public class GameManager : MonoBehaviour
         spawnTimer -= Time.deltaTime;
 
         if(killCount >= 50 && killCount < 100){
-            currentDifficulty = difficulty.MEDIUM;
+            currentDifficulty = Difficulty.MEDIUM;
         }else if(killCount >= 100){
-            currentDifficulty = difficulty.HARD;
+            currentDifficulty = Difficulty.HARD;
         }
 
         if(spawnTimer <= 0){
             if((int)currentDifficulty == 0)
                 spawnTimer = initialSpawnTimer;
             else {
-                //need to implement a way to decrease the spawn timer based on the difficulty
                 spawnTimer = initialSpawnTimer / (int)currentDifficulty + 1f; 
             }
             StartCoroutine(SpawnEnemy());
@@ -55,7 +54,10 @@ public class GameManager : MonoBehaviour
     }
 
     IEnumerator SpawnEnemy(){
-        GameObject enemyObject = Instantiate(enemyPrefab, new Vector3(UnityEngine.Random.Range(-10, 10), 0, UnityEngine.Random.Range(-10, 10)), Quaternion.identity);
+        GameObject enemyObject = Instantiate(enemyPrefab, 
+        new Vector3(UnityEngine.Random.Range(-10, 10), 0, 
+        UnityEngine.Random.Range(-10, 10)), Quaternion.identity);
+
         IEnemy enemy = enemyObject.GetComponent<IEnemy>();
         
         if(enemy != null){
@@ -69,9 +71,10 @@ public class GameManager : MonoBehaviour
         endGame?.Invoke();
     }
 
-    void HandleEnemyDeath(IEnemy enemy){
+    void HandleEnemyDeath(GameObject enemy){
         Debug.Log("Enemy died");
         killCount++;
-        enemy.onDeath -= HandleEnemyDeath;
+        enemy.GetComponent<IEnemy>().onDeath -= HandleEnemyDeath;
+        Destroy(enemy, 1f);
     }
 }
