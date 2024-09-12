@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IPlayer
 {
     private int _health = 100;
     private Animator _animator;
@@ -17,7 +18,10 @@ public class PlayerController : MonoBehaviour
     public KeyCode moveRightKey = KeyCode.D;   
     public KeyCode jumpKey = KeyCode.Space;    
     public KeyCode attackKey = KeyCode.J;      
-    public KeyCode deathKey = KeyCode.K;       
+    public KeyCode deathKey = KeyCode.K;
+
+    public event Action onDeath;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();

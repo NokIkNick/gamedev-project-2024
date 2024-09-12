@@ -57,3 +57,5 @@ gamedevproject2024/Logs/shadercompiler-UnityShaderCompiler.exe-6.log
 gamedevproject2024/Logs/shadercompiler-UnityShaderCompiler.exe-7.log
 gamedevproject2024/Logs/shadercompiler-UnityShaderCompiler.exe-8.log
 gamedevproject2024/Logs/shadercompiler-UnityShaderCompiler.exe-9.log
+*.log
+/gamedevproject2024/Logs

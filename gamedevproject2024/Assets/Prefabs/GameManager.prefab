@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawnPoint: {fileID: 3341704502253172012, guid: bd5d16181406e524c813800a53665987, type: 3}
-  enemyPrefab: {fileID: 2379224047124860790, guid: 61cfa4646172b3841a0782b89dd7ba05, type: 3}
+  enemyPrefab: {fileID: 6351511050277816062, guid: b639e799c7f452d43bd912b333fc7b20, type: 3}
   killCount: 0
   initialSpawnTimer: 10
   currentDifficulty: 0

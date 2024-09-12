@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IEnemy
 {
     public int health = 1;
+
+    public event Action<GameObject> onDeath;
 
     public void TakeDamage(int damageAmount)
     {
@@ -18,7 +21,8 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Debug.Log("Enemy died!");
-        Destroy(gameObject);
+        onDeath?.Invoke(gameObject);
+        Destroy(gameObject, 0.5f);
     }
 
      private void OnTriggerEnter2D(Collider2D collision){
